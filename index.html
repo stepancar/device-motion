@@ -1,0 +1,25 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <div id="output">
+
+        </div>
+        <button onclick="requestPermissions()">Request Permissions</button>
+        <script type="text/javascript">
+            function updateData(e) {
+                const element = document.getElementById('output');
+                element.innerHTML = JSON.stringify(e);
+            }
+            function requestPermissions() {
+                DeviceMotionEvent.requestPermissions().then((resp) => {
+                    if (resp == 'granted') {
+                        window.addEventListener('devicemotion', updateData);
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
