@@ -14,7 +14,7 @@
                 element.innerHTML = JSON.stringify(e);
             }
             function requestPermissions() {
-                DeviceMotionEvent.requestPermissions().then((resp) => {
+                DeviceMotionEvent.requestPermission().then((resp) => {
                     if (resp == 'granted') {
                         window.addEventListener('devicemotion', updateData);
                     }
