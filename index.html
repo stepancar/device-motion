@@ -11,7 +11,11 @@
         <script type="text/javascript">
             function updateData(e) {
                 const element = document.getElementById('output');
-                element.innerHTML = JSON.stringify(e);
+                element.innerHTML = JSON.stringify({
+                    x: e.accelerationIncludingGravity.x,
+                    y: e.accelerationIncludingGravity.y,
+                    z: e.accelerationIncludingGravity.z
+                });
             }
             function requestPermissions() {
                 DeviceMotionEvent.requestPermission().then((resp) => {
