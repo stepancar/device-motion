@@ -24,6 +24,9 @@
                     }
                 });
             }
+            setTimeout(() => {
+                window.addEventListener('devicemotion', updateData);
+            }, 1000)
         </script>
     </body>
 </html>
